@@ -1,0 +1,117 @@
+:root {
+  /* === Colors === */
+  color-scheme: dark;
+  --text-color: #faebd7;
+  --bg-color-body: #151d25;
+  --bg-color-header: rgba(50, 57, 73, 0.5);
+  --text-shadow: 0 1px 2px rgba(250, 235, 215, 0.4);
+  --border-header: 2px solid rgba(250, 235, 215, 0.4);
+
+  /* === Transitions / Effects === */
+  --transition-transform: transform 200ms ease;
+  --transition-color: color 400ms ease;
+  --transition-background: background-color 400ms ease;
+  --transition-border: border 400ms ease;
+  --transition-text-shadow: text-shadow 200ms ease;
+}
+
+:root[theme="light"] {
+  /* === Colors === */
+  color-scheme: light;
+  --text-color: #000;
+  --bg-color-body: #fffaed;
+  --bg-color-header: rgba(250, 235, 215, 0.5);
+  --text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --border-header: 2px rgba(0, 0, 0, 0.4) solid;
+
+  /* === Transitions / Effects === */
+  --transition-transform: transform 200ms ease;
+  --transition-color: color 400ms ease;
+  --transition-background: background-color 400ms ease;
+  --transition-border: border 400ms ease;
+  --transition-text-shadow: text-shadow 200ms ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+header {
+  /* === Layout === */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: max(40%, 300px);
+  height: 8vh;
+  position: sticky;
+  top: 2vh;
+  z-index: 10;
+
+  /* === Box === */
+  padding: 0 20px;
+  margin: 2vh 0 4vh;
+  border: var(--border-header);
+  border-radius: 8px;
+
+  /* === Color & Background === */
+  background: var(--bg-color-header);
+
+  /* === Effects / Transition === */
+  transition: var(--transition-border), var(--transition-background);
+  backdrop-filter: blur(8px);
+}
+#toggle-theme {
+  /* === Layout === */
+  display: inline-block;
+  font-size: 2rem;
+  background: none;
+
+  /* === Effects / Transition === */
+  transition: var(--transition-transform), var(--transition-text-shadow);
+}
+
+#toggle-theme:hover {
+  /* === Effects / Transition === */
+  text-shadow: var(--text-shadow);
+}
+
+#toggle-theme:active {
+  /* === Effects / Transition === */
+  text-shadow: var(--text-shadow);
+  transform: scale(0.8);
+}
+
+#header-ul {
+  /* === Layout === */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  /* === Box === */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header-li {
+  /* === Box === */
+  padding: 8px;
+}
+
+.header-a {
+  /* === Color & Text === */
+  color: var(--text-color);
+  text-decoration: none;
+
+  /* === Effects / Transition === */
+  transition: var(--transition-color), var(--transition-text-shadow);
+}
+
+.header-a:hover {
+  /* === Effects / Transition === */
+  text-shadow: var(--text-shadow);
+}
