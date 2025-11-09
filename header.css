@@ -39,6 +39,16 @@
   border: none;
   outline: none;
 }
+
+body {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  transition: all 200ms linear;
+  width: 100%;
+}
+
 header {
   /* === Layout === */
   display: flex;
